@@ -1,15 +1,17 @@
 import PlantCard from "./PlantCard.jsx";
 
-export default function PlantList({plant, addToCart}){
-    return( 
+export default function PlantList({plants, addToCart}){
+    return( <>
         <section className="plants">
           <h2>plants</h2>
-          {plant.map((item) =>{
-          <PlantCard key={item.id} plant={item} addToCart={addToCart} />
-          })}
-        </section>
+          <ul>
+          {plants.map((plant) =>{ 
+          return <PlantCard key={plant.id} plant={plant} addToCart={addToCart} />
+})}
+          </ul>
+        </section></>
     );
       
     
         
-}console.log(PlantList)
+}

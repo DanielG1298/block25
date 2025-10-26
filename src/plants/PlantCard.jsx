@@ -1,11 +1,13 @@
 
 export default function PlantCard({plant, addToCart}){
     return(
-        <section>
-        <p>{plant.image} </p>
+        <>
+        <li >
+        <figure>{plant.image} </figure>
         <h3>{plant.name}</h3>
         <button onClick={()=>addToCart(plant)}>add to cart</button>
-        </section>
+        </li>
+        </>
         
     );
-}console.log(PlantCard)
+}

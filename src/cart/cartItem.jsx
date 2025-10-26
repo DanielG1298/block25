@@ -1,11 +1,20 @@
-export default function CartItem({item}){
+import CartItemQuantity from "./CartItemQuantity";
+export default function CartItem({item, removeFromCart, addToCart}){
+    console.log(item);
     return(
-        <section>
-            <p>
-                {item.name} {item.image}
-            </p>
-            <p>{item.quantity}</p>
-        </section>
-    )
+        <li className="cart-item">
+      <div className="cart-item-emoji" style={{ fontSize: "3rem" }}>
+        {item.image} 
+      </div>
+      <div className="cart-item-details">
+        <h3>{item.name}</h3>
+        <CartItemQuantity
+          item={item}
+          removeFromCart={removeFromCart}
+          addToCart={addToCart}
+        />
+      </div>
+    </li>
+  );
 }
    
